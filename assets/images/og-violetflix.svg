@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a1a"/>
+      <stop offset="40%" style="stop-color:#1a0f2e"/>
+      <stop offset="100%" style="stop-color:#0a0612"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa"/>
+      <stop offset="50%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#5b21b6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Soft purple glow behind center -->
+  <ellipse cx="600" cy="280" rx="420" ry="180" fill="url(#glow)"/>
+
+  <!-- Film strip left -->
+  <g opacity="0.15">
+    <rect x="40" y="80" width="60" height="470" rx="4" fill="#fff"/>
+    <rect x="50" y="100" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="150" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="200" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="250" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="300" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="350" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="400" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="450" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="50" y="500" width="40" height="30" rx="2" fill="#0a0612"/>
+  </g>
+
+  <!-- Film strip right -->
+  <g opacity="0.15">
+    <rect x="1100" y="80" width="60" height="470" rx="4" fill="#fff"/>
+    <rect x="1110" y="100" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="150" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="200" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="250" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="300" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="350" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="400" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="450" width="40" height="30" rx="2" fill="#0a0612"/>
+    <rect x="1110" y="500" width="40" height="30" rx="2" fill="#0a0612"/>
+  </g>
+
+  <!-- Popcorn bucket suggestion (simple shapes) -->
+  <g transform="translate(180, 380)" opacity="0.9">
+    <!-- bucket -->
+    <path d="M20 40 L10 140 Q70 155 130 140 L120 40 Z" fill="#c41e3a"/>
+    <path d="M15 40 L25 20 L115 20 L125 40 Z" fill="#e63946"/>
+    <rect x="35" y="55" width="70" height="12" rx="2" fill="#fff" opacity="0.9"/>
+    <rect x="40" y="80" width="60" height="8" rx="1" fill="#fff" opacity="0.7"/>
+    <!-- popcorn kernels -->
+    <circle cx="45" cy="15" r="12" fill="#f5e6c8"/>
+    <circle cx="70" cy="5" r="14" fill="#ffe4b5"/>
+    <circle cx="95" cy="18" r="11" fill="#f5e6c8"/>
+    <circle cx="55" cy="0" r="9" fill="#fff8dc"/>
+    <circle cx="85" cy="-5" r="10" fill="#ffe4b5"/>
+  </g>
+
+  <!-- Main logo text -->
+  <text x="600" y="270" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-size="92" font-weight="900" fill="url(#purple)" filter="url(#softGlow)" letter-spacing="-2">
+    VioletFlix
+  </text>
+
+  <!-- Tagline -->
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#c4b5fd" letter-spacing="1">
+    Movies · Series · Anime · Live Sports
+  </text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="560" width="1200" height="70" fill="#7c3aed" opacity="0.15"/>
+  <text x="600" y="605" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#e9d5ff">
+    Stream in HD · No Ads · Just Entertainment
+  </text>
+</svg>

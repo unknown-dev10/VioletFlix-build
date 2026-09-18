@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  violetflix-api:
+    build: .
+    image: violetflix-api
+    container_name: violetflix-api
+    restart: unless-stopped
+    command: node violetflix-api-proxy.js
+    ports:
+      - "3050:3050"      # API proxy — connect your VPS panel to this port
+    env_file: .env
+    environment:
+      - PORT=3050
+      - HOST=0.0.0.0
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3050/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  violetflix-web:
+    build: .
+    image: violetflix-web
+    container_name: violetflix-web
+    restart: unless-stopped
+    command: node scripts/serve-static.js
+    ports:
+      - "3000:3000"      # Static frontend
+    env_file: .env
+    environment:
+      - PORT=3000
+      - HOST=0.0.0.0
+    depends_on:
+      violetflix-api:
+        condition: service_healthy
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
